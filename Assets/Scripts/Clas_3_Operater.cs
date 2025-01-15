@@ -110,6 +110,27 @@ public class Clas_3_Clas_3_Operater : MonoBehaviour
         Debug.Log(number3 != number4);       //不等於   True
         #endregion
 
+        #region 布林值邏輯運算子
+        Debug.Log("<color=#f93>---布林值邏輯運算子---</color>");
+        //邏輯否定，將布林值變成相反的值
+        Debug.Log(!true);           //False
+        Debug.Log(!false);          //True
+        bool boolVarTrue = true, boolVarFalse = false;
+        Debug.Log(!boolVarTrue);        //False
+        Debug.Log(!boolVarFalse);        //True
+
+        Debug.Log("<color=#f93>---並且與或者 &&、|| ---</color>");
+        // 並且 : 比較兩個的布林值，只要有一個 false 結果就是 false
+        Debug.Log(true && true);        //True
+        Debug.Log(true && false);       //False
+        Debug.Log(false && true);       //False
+        Debug.Log(false && false);      //False
+        // 或者 : 比較兩個布林值，只要有一個 true 結果就是 true
+        Debug.Log(true || true);        //True
+        Debug.Log(true || false);       //True
+        Debug.Log(false || true);       //True
+        Debug.Log(false || false);      //False
+        #endregion
     }
 
 }
