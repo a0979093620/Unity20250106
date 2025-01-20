@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 248985204}
   - component: {fileID: 248985203}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: "\u651D\u5F71\u6A5F"
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,6 +211,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &385121090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385121092}
+  - component: {fileID: 385121091}
+  m_Layer: 0
+  m_Name: "\u8AB2\u7A0B_5_2_\u5217\u8209"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &385121091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385121090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07b74b8da0dba540850ac74ac8ec911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  season: 1
+  item: 1
+--- !u!4 &385121092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385121090}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748858338
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOpen: 0
   score: 100
+  weapen: 
+  blood: 0
 --- !u!4 &748858340
 Transform:
   m_ObjectHideFlags: 0
@@ -263,3 +311,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 248985205}
   - {fileID: 748858340}
+  - {fileID: 385121092}
