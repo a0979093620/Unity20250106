@@ -10,6 +10,7 @@ namespace Lotta_3
     {
         private void Awake()
         {
+            #region while、do 與 for 迴圈
             // 迴圈請在一次性事件內使用 Awake 、 Start 
             // While 迴圈 : 當布林值為 true 時會持續執行
             // While  ( 布林值 ) { 程式區塊 } 
@@ -51,7 +52,21 @@ namespace Lotta_3
             {
                 Debug.Log($"<color=#78f>For 迴圈，k :{k}</color>");
             }
+            #endregion
 
+            // foreach 迴圈
+            // 資料結構 : 陣列、清單等等...
+            // foreach ( 資料類型 資料名稱 in 資料結構 ) { 程式區塊 }
+
+            // 字串就是一種資料結構，用來存放 char 的陣列
+            string dialogue = "嗨，你好， 我是 NPC ~ ";
+
+            // foreach 迴圈將抓出 dialogue 的每一個字並存放在 區域變數 text 內
+            // var 是無類型
+            foreach (var text in dialogue)
+            {
+                Debug.Log($"<color=#f63>{text}</color>");
+            }
         }
     }
 }
