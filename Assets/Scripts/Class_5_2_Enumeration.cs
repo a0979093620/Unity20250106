@@ -36,7 +36,7 @@ namespace Lotta_2
             // 透過數值設定列舉
             season = (Season)2;
             Debug.Log(season);
-        } 
+        }
         #endregion
 
         /// <summary>
@@ -54,8 +54,36 @@ namespace Lotta_2
         // 開始事件 : 在喚醒事件後執行一次 (初始化)
         private void Start()
         {
-            Debug.Log( (int) item);
+            Debug.Log((int)item);
+
+            // 列舉與判斷式 Switch
+            // Switch + Tab *2 > 修改 switch_on 為列舉 > Enter * 2 快速完成
+            switch (item)
+            {
+                case Item.None:
+                    Debug.Log("沒有道具");
+                    break;
+
+                case Item.Coin:
+                    Debug.Log("金幣");
+                    break;
+
+                case Item.RedWater:
+
+                case Item.BlueWater:
+                    Debug.Log("藥水道具");
+                    break;
+
+                case Item.Chicken:
+                    Debug.Log("炸雞");
+                    break;
+
+                default:
+                    Debug.Log("沒有道具");
+                    break;
+            }
         }
+
     }
 
 }
