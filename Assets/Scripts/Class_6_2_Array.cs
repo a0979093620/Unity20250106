@@ -46,7 +46,7 @@ namespace Lotta_4
 
             // 超出陣列範圍會出錯
             // 錯誤會導致閃退、當機或者不會執行下方程式
-            // Debug.Log($"<color=#f32>Cards 的第三張卡片 : {cards[2]}");
+            // Debug.Log($"<color=#f32>Cards 的第三張卡片 : {cards[3]}");
 
             // Set 設定陣列的資訊
             // 陣列名稱 [ 編號 ] 指定 值;
