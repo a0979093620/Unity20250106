@@ -8,6 +8,9 @@ namespace lotta_5
         [SerializeField, Header("血量"), Range(0, 100)]
         private int blood = 0;
        
+        /// <summary>
+        /// 課堂作業5
+        /// </summary>
         private void Update()
         {
             #region 練習5

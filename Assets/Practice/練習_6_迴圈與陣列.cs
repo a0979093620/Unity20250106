@@ -16,6 +16,9 @@ namespace lotta_6
         }; 
         #endregion
 
+        /// <summary>
+        /// 課堂作業6
+        /// </summary>
         private void Start()
         {
             //取得皮卡丘，姑姑寶貝，蓋倫
