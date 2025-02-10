@@ -32,8 +32,12 @@ namespace lotta_5
                     Debug.Log("<color=red>快死掉了</color>");
                     break;
 
+                case <= 0:
+                    Debug.Log("<color=red>你已經死了</color>");
+                    break;
+
                 default:
-                    Debug.Log("<color=black>你已經死了</color>");
+                    
                     break; 
 
             }
