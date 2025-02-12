@@ -12,11 +12,13 @@ namespace lotta_8
         private void Awake()
         {
             // 實體化 NPC 並處存在 npcJack 變數內
-            Class_8_1_NPC npcJack = new Class_8_1_NPC();
-            Class_8_1_NPC npcZodd = new Class_8_1_NPC("Zodd");
+            Class_8_1_NPC npcJack = new Class_8_1_NPC("捷克");
+            Class_8_1_NPC npcZodd = new Class_8_1_NPC("Zodd" , "你好啊~");
 
             npcJack.LogName();
             npcZodd.LogName();
+            npcJack.Talk();
+            npcZodd.Talk();
         }
     }
 
