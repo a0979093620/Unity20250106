@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 namespace lotta_7
 {
     
@@ -8,6 +9,7 @@ namespace lotta_7
         // 1. 先定義要獲得資料類別的變數
         // 2. 透過變數取得非靜態資料(成員)
         public Class_7_2_Static class_7_2;
+        public Class_7_2_史萊姆 slimeGreen , slimeBlue ;
 
         private void Awake()
         {
@@ -30,6 +32,23 @@ namespace lotta_7
 
             // 呼叫靜態方法
             Class_7_2_Static.Kick();
+        }
+
+
+        private void Start()
+        {
+            // 非靜態成員
+            slimeGreen.hp = 10;
+            Debug.Log($"<color=#3f3>綠史萊姆 HP : {slimeGreen.hp}");
+            slimeBlue.hp = 10;
+            Debug.Log($"<color=#3f3>藍史萊姆 HP : {slimeBlue.hp}");
+
+            // 靜態成員
+            // 靜態成員沒辦法透過個體存取
+            // slimeGreen.moveSpeed = 3.5f;
+            Class_7_2_史萊姆.movespeed = 3.5f;
+            Debug.Log($"<color=#3f3>史萊姆移動速度 : {Class_7_2_史萊姆.movespeed}");
+
         }
 
     }   
