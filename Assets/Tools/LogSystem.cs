@@ -1,13 +1,19 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace lotta.tools
 {
     /// <summary>
-    /// ¿é¥X°T®§¤u¨ã
+    /// è¼¸å‡ºè¨Šæ¯å·¥å…·
     /// </summary>
     public class LogSystem
     {
         public static string LogWithColor(string message , string color)
+        {
+            string reslt = $"<color={color}>{message}</color>";
+            Debug.Log(reslt);
+            return reslt;
+        }
+        public static string LogWithColor(object message , string color)
         {
             string reslt = $"<color={color}>{message}</color>";
             Debug.Log(reslt);
