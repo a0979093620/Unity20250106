@@ -24,12 +24,40 @@ namespace lotta_8
 
 
         }
+        private void Start()
+        {
+            // var 不指定類型，可以儲存所有資料
+            var testClass = new Class_8_4_Class("我是類別");
+            var testStruct = new Class_8_4_Struct("我是結構");
+
+            var testClass2 = new Class_8_4_Class("我是類別 2");
+            var testStruct2 = new Class_8_4_Struct("我是結構 2");
+
+            LogSystem.LogWithColor(testClass.name, "#79f");
+            LogSystem.LogWithColor(testClass2.name, "#79f");
+            LogSystem.LogWithColor(testStruct.name, "#79f");
+            LogSystem.LogWithColor(testStruct2.name, "#79f");
+
+            testClass2 = testClass;     // 傳址 : 這時候的 class 與 class2 指向同一個地址
+            testStruct2 = testStruct;   // 傳値 : 這時候的 struct 與 struct2 指向同一個値
+
+            // 修改 Cclass 或 class2 資料都會被同步
+            testClass.name = "類別";
+            LogSystem.LogWithColor(testClass.name, "#f79");
+            LogSystem.LogWithColor(testClass2.name, "#f79");
+
+            // 修改 struct 或 struct2 資料不會被同步
+            testStruct.name = "結構";
+            LogSystem.LogWithColor(testStruct.name, "#f79");
+            LogSystem.LogWithColor(testStruct2.name, "#f79");
+        }
     }
 
     #region 類別
     // 類別 :
     // 1. 繼承 : 允許繼承
     // 2. 建構子可以有多個建構子
+    // 4. 資料類型 : 參考型別
     public class Class_8_3_Class : MonoBehaviour
     {
         public Class_8_3_Class()
@@ -47,6 +75,7 @@ namespace lotta_8
     // 結構 : 
     // 1. 結構 : 不允許繼承
     // 2. 建構子 : 不能有無參數建構子
+    // 4. 資料類型 : 實值型別
     public struct Class_8_3_Struct
     {
         //public Class_8_3_Struct()
