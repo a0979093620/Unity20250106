@@ -9,7 +9,7 @@ namespace lotta_8
         private string name;
         private string dialogue;
 
-        // 建構子 : 沒有傳回值，名稱與費別相同的公開方法
+        // 建構子 : 沒有傳回值，名稱與類別相同的公開方法
         // 預設建構子 : 沒有參數
         public Class_8_1_NPC()
         {

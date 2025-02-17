@@ -13,7 +13,7 @@ namespace lotta_7
         {
             // 取的另一個類別的資料
             Debug.Log(property.moveSpeed);          // 可以取得公開變數
-            //Debug.Log(property.turnSpeed);        // 不可取得私人變數                                               取得公開變數
+            //Debug.Log(property.turnSpeed);        // 不可取得私人變數                                              
 
             // 設定另一個類別的資料
             property.moveSpeed = 7.7f;              // 可以設定公開變數
@@ -24,6 +24,7 @@ namespace lotta_7
 
             property.runSpeed = 50.3f;              // 可以設定有 set 的屬性
             //property.jumpSpeed = 99.5f;           // 不可設定沒有 set 屬性 (唯讀)
+            
         }
     
     }

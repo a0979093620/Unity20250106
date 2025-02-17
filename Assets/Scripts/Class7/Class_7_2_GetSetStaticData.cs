@@ -2,7 +2,9 @@
 using UnityEngine;
 namespace lotta_7
 {
-    
+    /// <summary>
+    /// 練習取得與設定靜態資料
+    /// </summary>
     public class Class_7_2_GetSetStaticData : MonoBehaviour
     {
         // 取得非靜態資料(成員)

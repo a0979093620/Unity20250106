@@ -25,6 +25,7 @@ namespace lotta_7
         // 呼叫屬性快捷鍵 prop + TAB * 2
         public int lv { get; set; } = 1;    // 有預設值的屬性
 
+
         private void Awake()
         {
             Debug.Log("<color=yellow>--- 取得 變數與屬性---</color>");
@@ -72,7 +73,7 @@ namespace lotta_7
         private void Start()
         {
             Debug.Log($"<color=#77f>魔力 : {mp}</color>");
-            mp = 500;                           // 裝到 value 裡面
+            mp = 500;    // 裝到 value 裡面
             Debug.Log($"<color=#77f>魔力 : {mp}</color>");
 
         }

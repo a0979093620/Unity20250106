@@ -1,81 +1,83 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;      //¤Á´«³õ´º­n¥[±o
+ï»¿using UnityEngine;
+using UnityEngine.SceneManagement;      //åˆ‡æ›å ´æ™¯è¦åŠ å¾—
 namespace lotta_7
-{ 
+{
     /// <summary>
-    /// ÀRºA Static
+    /// éœæ…‹ Static
     /// </summary>
     public class Class_7_2_Static : MonoBehaviour
     {
-        #region ÅÜ¼Æ»PÄİ©Ê
-        // ¦¨­û : 
-        // ÅÜ¼Æ¡BÄİ©Ê¡B¤èªk
+        #region è®Šæ•¸èˆ‡å±¬æ€§
+        // æˆå“¡ : 
+        // è®Šæ•¸ã€å±¬æ€§ã€æ–¹æ³•
 
-        // «DÀRºAÅÜ¼Æ
+        // ééœæ…‹è®Šæ•¸
         public int inventorWater = 10;
 
-        // ÀRºAÅÜ¼Æ : ­×¹¢µü«á­±²K¥[ÃöÁä¦r static
-        // ÀRºAÅÜ¼Æ¤£Åã¥Ü¦bÄİ©Ê­±ªO¤W
+        // éœæ…‹è®Šæ•¸ : ä¿®é£¾è©å¾Œé¢æ·»åŠ é—œéµå­— static
+        // éœæ…‹è®Šæ•¸ä¸é¡¯ç¤ºåœ¨å±¬æ€§é¢æ¿ä¸Š
         public static int inventorProp = 20;
 
-        public string skillMain => "¤õ²y³N";           // «DÀRºAÄİ©Ê
-
-        public static string skillSecond => "ªvÂ¡³N";  // ÀRºAÄİ©Ê 
+        // ééœæ…‹å±¬æ€§
+        public string skillMain => "ç«çƒè¡“";
+        // éœæ…‹å±¬æ€§
+        public static string skillSecond => "æ²»ç™’è¡“";
         #endregion
-
-        private float attack = 10;
-        private static float mp = 100;
 
         private void Awake()
         {
             //inventorWater = 7;
             //inventorProp = 15;
-            Debug.Log($"<color=#f31>ÃÄ¤ô : {inventorWater}</color>");
-            Debug.Log($"<color=#f31>¹D¨ã : {inventorProp}</color>");
+            Debug.Log($"<color=#f31>è—¥æ°´ : {inventorWater}</color>");
+            Debug.Log($"<color=#f31>é“å…· : {inventorProp}</color>");
 
-        }                       //Åã¥Ü¨âºØÅÜ¼Æ
+        }                       
 
-        public void Punch()                            // «DÀRºA¤èªk
+        private float attack = 10;
+        private static float mp = 100;
+        // ééœæ…‹æ–¹æ³•
+        public void Punch()
         {
-            Debug.Log("<color=#3f3>¨Ï¥Î®±À»</color>");
+            Debug.Log("<color=#3f3>ä½¿ç”¨æ‹³æ“Š</color>");
 
-            // «DÀRºA¤èªk¥i¥H¦s¨ú©Ò¦³¦¨­û 
-            Debug.Log($"<color=#f9e>«DÀRºA§ğÀ»¤O : {attack}</color>");
-            Debug.Log($"<color=#f9e>ÀRºAÅ]¤O : {mp}</color>");
+            // ééœæ…‹æ–¹æ³•å¯ä»¥å­˜å–æ‰€æœ‰æˆå“¡ 
+            Debug.Log($"<color=#f9e>ééœæ…‹æ”»æ“ŠåŠ› : {attack}</color>");
+            Debug.Log($"<color=#f9e>éœæ…‹é­”åŠ› : {mp}</color>");
 
         }
-        
-        public static void Kick()                       // ÀRºA¤èªk
+
+        // éœæ…‹æ–¹æ³•
+        public static void Kick()
         {
-            Debug.Log("<color=#3f3>¨Ï¥Î½ğÀ»</color>");
-            // ÀRºA¤èªk¥u¯à¦s¨úÀRºA¦¨­û
-            // ¥Ñ©ó attack ¬O«DÀRºAµLªk¦s¨ú (¾É­P¿ù»~)
-            // Debug.Log($"<color=#f9e>«DÀRºA§ğÀ»¤O : {attack}</color>");
-            Debug.Log($"<color=#f9e>ÀRºAÅ]¤O : {mp}</color>");
+            Debug.Log("<color=#3f3>ä½¿ç”¨è¸¢æ“Š</color>");
+            // éœæ…‹æ–¹æ³•åªèƒ½å­˜å–éœæ…‹æˆå“¡
+            // ç”±æ–¼ attack æ˜¯ééœæ…‹ç„¡æ³•å­˜å– (å°è‡´éŒ¯èª¤)
+            // Debug.Log($"<color=#f9e>ééœæ…‹æ”»æ“ŠåŠ› : {attack}</color>");
+            Debug.Log($"<color=#f9e>éœæ…‹é­”åŠ› : {mp}</color>");
 
         }
 
         private void Start()
         {
-            // ¦b Unity ¤ºªº®t²§
-            // ³õ´º¤Á´«®É
-            // «DÀRºA¦¨­û·|³QÄÀ©ñ (ÁÙ­ìºû¹w³]­È)
-            inventorWater++;    // ÃÄ¤ô¥[¤@
-            Debug.Log($"<color=#78f>ÃÄ¤ô : {inventorWater}</color>");
+            // åœ¨ Unity å…§çš„å·®ç•°
+            // å ´æ™¯åˆ‡æ›æ™‚
+            // ééœæ…‹æˆå“¡æœƒè¢«é‡‹æ”¾ (é‚„åŸç¶­é è¨­å€¼)
+            inventorWater++;    // è—¥æ°´åŠ ä¸€
+            Debug.Log($"<color=#78f>è—¥æ°´ : {inventorWater}</color>");
 
-            // «DÀRºA¦¨­û·|³QÄÀ©ñ (ÁÙ­ìºû¹w³]­È)
-            inventorProp++;     // ¹D¨ã¥[¤@
-            Debug.Log($"<color=#78f>¹D¨ã : {inventorProp}</color>");
+            // ééœæ…‹æˆå“¡æœƒè¢«é‡‹æ”¾ (é‚„åŸç¶­é è¨­å€¼)
+            inventorProp++;     // é“å…·åŠ ä¸€
+            Debug.Log($"<color=#78f>é“å…· : {inventorProp}</color>");
 
         }
 
         private void Update()
         {
-            // ¦b Game µe­±«ö¤U¼Æ¦r 1 ·|­«·s¸ü¤J³õ´º (¤Á¬°­^¤å¿é¤Jªk)
-            // ¦pªG«ö¤U¼Æ¦r 1 (¥ªÃäÁä½L)
+            // åœ¨ Game ç•«é¢æŒ‰ä¸‹æ•¸å­— 1 æœƒé‡æ–°è¼‰å…¥å ´æ™¯ (åˆ‡ç‚ºè‹±æ–‡è¼¸å…¥æ³•)
+            // å¦‚æœæŒ‰ä¸‹æ•¸å­— 1 (å·¦é‚Šéµç›¤)
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                SceneManager.LoadScene("½Òµ{_7_Äİ©Ê»PÀRºA");
+                SceneManager.LoadScene("èª²ç¨‹_7_å±¬æ€§èˆ‡éœæ…‹");
             }
         }
     }
