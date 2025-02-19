@@ -1,5 +1,6 @@
 ﻿using lotta.tools;
 using UnityEngine;
+using System;   //使用 API 一定要加的
 namespace lotta_9
 {
     public class Class_9_2_DataTypeSwitch : MonoBehaviour
@@ -56,6 +57,32 @@ namespace lotta_9
             byte4 = (byte)int3;
             LogSystem.LogWithColor(byte4, "#f77"); 
             #endregion
+        }
+        private void Start()
+        {
+            //將整數轉成字串
+            int count = 99;
+            var intToString = Convert.ToString(count);
+            LogSystem.LogWithColor(intToString.GetType(), "#f96");
+
+            // 將布林値轉成字串
+            bool isOver = true;
+            var boolToString = Convert.ToString(isOver);
+            LogSystem.LogWithColor(isOver.GetType(), "#f96");
+
+            // 浮點數轉字串
+            float move = 3.5f;
+            var floatToByte = Convert.ToByte(move);
+            LogSystem.LogWithColor(move.GetType(), "#f96");
+
+            // true = 1 , false = 0
+            bool isGrounded = true;
+            var boolToByte = Convert.ToByte(isGrounded);
+            LogSystem.LogWithColor(boolToByte, "#6f6");
+            LogSystem.LogWithColor(boolToByte.GetTypeCode(), "#6f6");
+
+
+
         }
     }
 }
