@@ -65,7 +65,7 @@ namespace lotta_7
             inventorWater++;    // 藥水加一
             Debug.Log($"<color=#78f>藥水 : {inventorWater}</color>");
 
-            // 非靜態成員會被釋放 (還原維預設值)
+            // 靜態成員不會被釋放 (不還原維預設值)
             inventorProp++;     // 道具加一
             Debug.Log($"<color=#78f>道具 : {inventorProp}</color>");
 

@@ -18,7 +18,7 @@ namespace lotta_8
 
         //建構子的簡寫
         public Class_8_1_NPC(string _name) => name = _name;
-
+        // 建構子標準寫法
         public Class_8_1_NPC(string _name , string _dialogue)
         {
             name = _name;

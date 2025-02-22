@@ -8,7 +8,7 @@ namespace lotta_7
     /// </summary>
     public static class Class_7_2_StaticClass
     {
-        // 常數 (靜態)
+        // 常數 (靜態) 資料類別為 const
         // 常數是無法修改得，並且需要預設值
         public const string playername = "KID";
         // 靜態可以修改，也不用給予預設值
