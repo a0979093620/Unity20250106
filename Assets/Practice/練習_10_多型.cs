@@ -6,9 +6,9 @@ namespace lotta_10
     {
         private void Awake()
         {
-            Water red = new Water("紅水");
-            Water blue = new Water("藍水");
-            Equipage equipage = new Equipage("頭盔");
+            Item red = new Water("紅水");
+            Item blue = new Water("藍水");
+            Item equipage = new Equipage("頭盔");
             
             red.Use();
             blue.Use(10);
