@@ -22,12 +22,12 @@ namespace lotta_9
 
         private void Awake()
         {
-            // 裝箱 Boxing (程式 第22行 的動作)
+            // 裝箱 Boxing (程式 第27行 的動作)
             // 將實質型別資料放到參考型別資料內
             box = number;
             LogSystem.LogWithColor(box.ToString(), "#f33");
 
-            // 拆箱 Unboxing (程式 第32行 的動作)
+            // 拆箱 Unboxing (程式 第33行 的動作)
             // 將參考型別資料放到實質型別資料內
             // 在前方添加 (要轉換的資料類型)
             count = (int)boxNumber;

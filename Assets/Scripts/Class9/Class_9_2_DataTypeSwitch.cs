@@ -60,6 +60,8 @@ namespace lotta_9
         }
         private void Start()
         {
+            // Unity 裡的 Api     Convert.ToString(要轉換的資料);     將資料轉成字串
+
             //將整數轉成字串
             int count = 99;
             var intToString = Convert.ToString(count);
