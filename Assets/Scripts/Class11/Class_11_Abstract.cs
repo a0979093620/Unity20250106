@@ -25,6 +25,7 @@ namespace lotta_11
             // 向上轉型可以使用多型
             Monster fly = new FlyDragon();
             fly.Track();
+            
 
             FlyDragon fly2 = new FlyDragon();
             fly2.Track();
