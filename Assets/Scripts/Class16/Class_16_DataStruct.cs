@@ -69,21 +69,66 @@ namespace lotta_16
             }
             #endregion
 
+            #region 堆疊
             // 堆疊 : 先進後出。類似椅子疊一起
             Stack<string> emeny = new Stack<string>();
             // 放資料進入堆疊
             emeny.Push("史萊姆");
             emeny.Push("哥布林");
             LogStrack<string>(emeny);
+
+            // 拿資料並且不移除
+            LogSystem.LogWithColor($"取出的資料 : {emeny.Peek()}", "#f33");           
+            LogStrack<string>(emeny);
+            // 拿資料並且移除
+            LogSystem.LogWithColor($"取出的資料 : {emeny.Pop()}", "#f33");            
+            LogStrack<string>(emeny);
+
+            // 判斷是否包含某筆資料
+            LogSystem.LogWithColor($"{emeny.Contains("哥布林")}", "#3f6");
+            // 清除所有資料
+            emeny.Clear();
+            LogStrack<string>(emeny);
+            #endregion
+
+            Queue<string> player = new Queue<string>();
+            player.Enqueue("盜賊");
+            player.Enqueue("法師");
+            player.Enqueue("戰士");
+            LogQueue<string>(player);
+            
+            // 拿東西並且不刪除，與堆疊的 Peek 相同
+            LogSystem.LogWithColor($"取出的資料 : {player.Peek()}", "#f33");
+            LogQueue<string>(player);
+            // 拿東西並刪除，與堆疊的 Pop 相同
+            LogSystem.LogWithColor($"取出的資料 : {player.Dequeue()}", "#f33");
+            LogQueue<string>(player);
+
+
+
         }
 
         private void LogStrack<T>(Stack<T> stack)
         {
-            foreach(var item in stack)
+            LogSystem.LogWithColor("----------", "#fff");
+            foreach (var item in stack)
             {
                 LogSystem.LogWithColor($"堆疊資料 : {item}", "#f74");
             }
+
+
+
         }
+
+        private void LogQueue<T>(Queue<T> queue)
+        {
+            LogSystem.LogWithColor("----------", "#fff");
+            foreach(var item in queue)
+            {
+                LogSystem.LogWithColor($"佇列資料 : {item}", "#7f7");
+            }
+        }
+
     }
 }
 
