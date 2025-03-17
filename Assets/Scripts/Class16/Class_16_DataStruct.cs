@@ -1,6 +1,7 @@
 ﻿using lotta.tools;
 using UnityEngine;
-using System.Collections.Generic;       // 有許多資料結構的命名空間
+using System.Collections.Generic;
+using System.Linq;       // 有許多資料結構的命名空間
 
 namespace lotta_16
 {
@@ -143,12 +144,47 @@ namespace lotta_16
             LogLSortSet(counts);        // counts 就只剩空集合 
             #endregion
 
+            #region 字典
             // 字典
             Dictionary<int, string> deck = new Dictionary<int, string>()
             {
                 {10, "小棉球" }, {3, "大棉花"}, {1, "中等棉"}
             };
-            LogDictionary<int,string>(deck);
+            LogDictionary<int, string>(deck);
+            deck.Add(7, "ㄚㄚ棉");
+            // containskey  containsvalue  用來判斷是否有特定鍵或值
+            LogSystem.LogWithColor($"是否有編號 7 :{deck.ContainsKey(7)}", "#f33");
+            LogSystem.LogWithColor($"是否有棉花 :{deck.ContainsValue("棉花")}", "#f33");
+            #endregion
+
+            #region 排序清單與排序字典
+            // 保持排序並且不會有重複的鍵(依照 Key 來排序)
+            SortedList<string, int> board = new SortedList<string, int>();
+            board.Add("喵", 99);
+            board.Add("汪", 13);
+            board.Add("嘿", 13);
+            //  board.Add("嘿", 50);         重複的鍵會導致錯誤
+            LogSortedList<string, int>(board);
+
+
+            // 保持排序的字典(依照 Key 來排序)
+            SortedDictionary<string, int> scores = new SortedDictionary<string, int>();
+            scores.Add("喵", 99);
+            scores.Add("汪", 13);
+            scores.Add("嘿", 13);
+            //  scores.Add("嘿", 50);         重複的鍵會導致錯誤
+            LogSortedDictionary<string, int>(scores);
+
+            // Sortedlist 與 SortedDictionary 的差異
+            // 1. SortedList 是使用陣列方式儲存，比較省空間
+            // 2. SortedDictionary 是使用樹狀結構方式儲存，比較占記憶體空間
+            // 3. SortedList 可以使用索引值存取 [0]
+            LogSystem.LogWithColor($"排行第一筆 : {board.Keys[0]}", "#f93");
+            // LogSystem.LogWithColor($"排行第一筆 : {scores.Keys[0]}","#f93" );
+            // 4. SortedList 大量資料增減比較占記憶體
+            // 如果衣料不需要頻繁增減建議使用 SortedList 反之建議使用 SortedDictionary 
+            #endregion
+
         }
 
         private void LogStrack<T>(Stack<T> stack)
@@ -196,13 +232,30 @@ namespace lotta_16
         {
             foreach(var item in dict)
             {
-                // key 指數字      value 說的是值
+                // key 說的是 鍵     value 說的是值
                 LogSystem.LogWithColor($"編號 : {item.Key}", "#f96");
                 LogSystem.LogWithColor($"名稱 : {item.Value}", "#ff6");
             }
             LogSystem.LogWithColor("---------------", "#f45");
         }
 
+        private void LogSortedList<T,U>(SortedList<T,U> list)
+        {
+            foreach(var item in list)
+            {
+                LogSystem.LogWithColor($"{item.Key}的分數 : {item.Value}", "#77f");
+            }
+            LogSystem.LogWithColor("-----------------", "#ff5");
+        }
+
+        private void LogSortedDictionary<T, U>(SortedDictionary<T, U> dict)
+        {
+            foreach (var item in dict)
+            {
+                LogSystem.LogWithColor($"{item.Key}的分數 : {item.Value}", "#77f");
+            }
+            LogSystem.LogWithColor("-----------------", "#ff5");
+        }
     }
 }
 
