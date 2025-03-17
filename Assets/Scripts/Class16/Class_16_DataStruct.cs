@@ -91,21 +91,64 @@ namespace lotta_16
             LogStrack<string>(emeny);
             #endregion
 
+            #region 佇列
             Queue<string> player = new Queue<string>();
             player.Enqueue("盜賊");
             player.Enqueue("法師");
             player.Enqueue("戰士");
             LogQueue<string>(player);
-            
+
             // 拿東西並且不刪除，與堆疊的 Peek 相同
             LogSystem.LogWithColor($"取出的資料 : {player.Peek()}", "#f33");
             LogQueue<string>(player);
             // 拿東西並刪除，與堆疊的 Pop 相同
             LogSystem.LogWithColor($"取出的資料 : {player.Dequeue()}", "#f33");
             LogQueue<string>(player);
+            #endregion
 
+            #region 鏈結串列
+            // Linklist 鏈結串列
+            string[] skillArray = new string[] { "火球", "水球" };
+            LinkedList<string> skills = new LinkedList<string>(skillArray);
+            LogLinkList<string>(skills);
+            skills.AddLast("毒球");
+            LogLinkList<string>(skills);
+            skills.AddLast("治癒球");
+            LogLinkList<string>(skills);
 
+            // 在火球後面添加草球
+            LinkedListNode<string> findskill = skills.Find("火球");
+            skills.AddAfter(findskill, "草球");
+            // 在火球前面添加暗球
+            skills.AddBefore(findskill, "暗球");
+            LogLinkList<string>(skills);
+            #endregion
 
+            #region 排序集合
+            // 自動排序並且不重複的集合(由小到大排序)
+            SortedSet<int> counts = new SortedSet<int>() { 9, 2, 80, 1 };
+            LogLSortSet<int>(counts);
+            counts.Add(77);
+            counts.Add(123);
+            counts.Add(9);
+            LogLSortSet<int>(counts);
+            LogSystem.LogWithColor($"最大 : {counts.Max}", "#f33");
+            LogSystem.LogWithColor($"最大 : {counts.Min}", "#f33");
+
+            SortedSet<int> lv = new SortedSet<int> { 7, 3, 75, 123, 5, 80 };
+            // 交集與差異
+            counts.IntersectWith(lv);       //count 會只剩下{80,123}
+            LogLSortSet(counts);
+            counts.ExceptWith(lv);      //交集:刪掉 counts 裡面的{7,3,75,123,5,80}
+            LogLSortSet(counts);        // counts 就只剩空集合 
+            #endregion
+
+            // 字典
+            Dictionary<int, string> deck = new Dictionary<int, string>()
+            {
+                {10, "小棉球" }, {3, "大棉花"}, {1, "中等棉"}
+            };
+            LogDictionary<int,string>(deck);
         }
 
         private void LogStrack<T>(Stack<T> stack)
@@ -127,6 +170,37 @@ namespace lotta_16
             {
                 LogSystem.LogWithColor($"佇列資料 : {item}", "#7f7");
             }
+        }
+
+        private void LogLinkList<T>(LinkedList<T> linklist)
+        {
+            foreach (var item in linklist)
+            {
+                LogSystem.LogWithColor(item, "#7f7");
+            }
+
+            LogSystem.LogWithColor("----------", "#fa3");
+        }
+
+        private void LogLSortSet<T>(SortedSet<T> set)
+        {
+            foreach (var item in set)
+            {
+                LogSystem.LogWithColor(item, "#7f7");
+            }
+
+            LogSystem.LogWithColor("----------", "#fa3");
+        }
+
+        private void LogDictionary<T, U>(Dictionary<T, U> dict)
+        {
+            foreach(var item in dict)
+            {
+                // key 指數字      value 說的是值
+                LogSystem.LogWithColor($"編號 : {item.Key}", "#f96");
+                LogSystem.LogWithColor($"名稱 : {item.Value}", "#ff6");
+            }
+            LogSystem.LogWithColor("---------------", "#f45");
         }
 
     }
