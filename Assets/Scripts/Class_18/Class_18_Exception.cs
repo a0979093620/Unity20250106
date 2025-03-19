@@ -11,6 +11,7 @@ namespace lotta_18
     {
         private void Awake()
         {
+            #region 例外處理
             // 例外1
             LogSystem.LogWithColor($"{Divistion(8, 4)}", "#f33");
             LogSystem.LogWithColor($"{Divistion(3, 9)}", "#f33");
@@ -23,8 +24,31 @@ namespace lotta_18
 
             // 例外3
             SetEmeny();
+            #endregion
+
+            try
+            {
+            Damage(35);
+            Damage(70);
+            }
+            catch (Exception e)
+            {
+                LogSystem.LogWithColor($"{e}", "#fa9");
+            }
+
+            try
+            {
+                Cure(30);
+                Cure(-10);
+            }
+            catch (CureValueLowerZeroExcepyion e)       //自訂例外
+            {
+                LogSystem.LogWithColor(e.Message, "#7f3");
+            }
+
         }
 
+        #region 例外處理
         #region 例外1
         /// <summary>
         /// 除法
@@ -51,7 +75,7 @@ namespace lotta_18
             {
                 LogSystem.LogWithColor("例外處理完畢", "#f73");
             }
-        } 
+        }
         #endregion
 
         #region 例外2
@@ -91,8 +115,54 @@ namespace lotta_18
             {
                 LogSystem.LogWithColor($"發生例外 {e.Message}", "#f39");
             }
-        } 
+        }
+        #endregion 
         #endregion
+
+        private float hp = 100;
+        private void Damage(float damage)
+        {
+            hp -= damage;
+
+
+            if (hp < 0)
+            {
+                // 自訂例外
+                throw new Exception("血量小於零");
+            }
+            else
+            {
+                LogSystem.LogWithColor($"血量 : {hp}", "#93f");
+            }
+
+        }
+
+
+        private void Cure(float cure)
+        {
+            if (cure < 0)
+            {
+                // throw new Exception("治癒值低於零");
+                throw new CureValueLowerZeroExcepyion("治癒值低於零");
+            }
+            else
+            {
+                LogSystem.LogWithColor($"治療 : {cure}", "green");
+                hp += cure;
+            }
+        }
+
+    }
+
+    public class CureValueLowerZeroExcepyion : Exception
+    {
+        /// <summary>
+        /// 建構子
+        /// </summary>
+        /// <param name="message">例外訊息</param>
+        public CureValueLowerZeroExcepyion(string message) : base(message)
+        {
+        }
     }
 }
 
