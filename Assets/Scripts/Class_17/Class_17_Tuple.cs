@@ -33,6 +33,13 @@ namespace lotta_17
             UseCard(card2);
             UseCard(("暴龍", 13, 24));
 
+            var cardupdate = UpdateCardCost(card1);
+            LogSystem.LogWithColor($"{cardupdate.name} |" + $"消耗 : {cardupdate.cost} |" +
+                $" 編號 : {cardupdate.index}", "#f49");
+            LogSystem.LogWithColor($"{cardupdate == card1}", "#79f");
+            LogSystem.LogWithColor($"{cardupdate != card1}","#79f");
+
+
         }
 
         /// <summary>
@@ -45,7 +52,17 @@ namespace lotta_17
             
         }
         
-        
+        /// <summary>
+        /// 降低卡牌消耗
+        /// </summary>
+        /// <param name="card">卡牌</param>
+        /// <returns>降低消耗的卡牌</returns>
+        private (string name, int cost, int index) UpdateCardCost((string name, int cost, int index) card)
+        {
+            card.name = card.name + "降低消耗版本";
+            card.cost -= 1;
+            return card;
+        }
         
     }
 }
