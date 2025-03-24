@@ -167,6 +167,7 @@ namespace lotta_19
             LogSystem.LogWithColor($"{predicateTest("喵")}", "#ff3");
 
 
+
         }
 
         // 委派 : 將方法當作參數
