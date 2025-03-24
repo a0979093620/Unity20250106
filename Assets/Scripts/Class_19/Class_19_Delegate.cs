@@ -1,5 +1,8 @@
 ﻿using lotta.tools;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.iOS;
 
 namespace lotta_19
 {
@@ -77,7 +80,7 @@ namespace lotta_19
             float result = numberA * numberB;
             LogSystem.LogWithColor(result, "#7ff");
             return result;
-        } 
+        }
         #endregion
 
         private void Combine<T>(T a)
@@ -91,6 +94,25 @@ namespace lotta_19
 
         private DelegateCombing<float> delegateCombingFloat;
         private DelegateCombing<int> delegateCombingInt;
+
+
+        // Func
+        // 可以存放有傳回值並且有 0 個參數以上的方法
+        // <參數，回傳值>
+        private Func<float, float> funCalc;
+
+        // Action
+        // 可以存放無傳回值並且有 0 個參數以上的方法
+        private Action actionMetohd;
+
+        // Predicate
+        // 可以存放有布林值傳回並且有 1 個參數的方法
+        // 宣告一個委派，有一個參數 float，並且傳回值為 bool
+        private Predicate<float> predicate;
+
+
+
+
 
         // 4. 呼叫委派
         private void Start()
@@ -118,6 +140,31 @@ namespace lotta_19
             delegateCombingInt = Combine<int>;
             delegateCombingInt(999);
 
+
+
+
+
+
+
+            funCalc = delegate (float x) { return x * 10; };
+            LogSystem.LogWithColor($"Func 委派 : {funCalc(3.5f)}", "#f33");
+
+            actionMetohd = delegate () { LogSystem.LogWithColor("Action 委派  ", "#f33"); };
+            actionMetohd();
+
+            predicate = delegate(float x) {return x >0; };
+            LogSystem.LogWithColor($"Predicate委派 : 7 是否大於零 _ {predicate(7)}", "#f33");
+
+            // Lambda 運算子 =>
+            // (參數) => { 陳述式 }
+            Action action = () => { LogSystem.LogWithColor("Lambda 練習", "#ff3"); };
+            action();
+
+            Func<int,string>func = (x) => { return $"Lambda 練習 ，數字 : {x}"; };
+            LogSystem.LogWithColor($"{func(77)}", "#ff3");
+
+            Predicate<string> predicateTest = (x) => { return x.Length >0; };
+            LogSystem.LogWithColor($"{predicateTest("喵")}", "#ff3");
 
 
         }
